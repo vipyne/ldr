@@ -1,10 +1,13 @@
-# CD-R 700mb
+[CD-R 700mb](https://github.com/thebaer/cdr): now with video
+----
+
+# Mix Laserdisc
 
 Before Spotify, Apple Music, Amazon Music Unlimited, Amazon Music HD, Google Play Music, Tidal, Deezer, Pandora, Idagio, LiveXLive, Primephonic, SiriusXM Essential, SiriusXM Premier, and YouTube Music, we listened to mixtapes. We compiled tracks on iTunes and burned them onto CD-Rs. We traded them with each other. We freely listened in our car or at home or with our portable CD player. And it was good.
 
 Today we might spend an eternity making the perfect playlist for someone special, only to learn they're on the Z Music Unlimited service while you're on X Music Basic. Now, vendor lock-in means love lock-out. Our connections are disconnected. Our romantic hopes aren't high enough for the surrounding paywalls. What can we do?
 
-## A Modern Mixtape
+## A Modern Mixtape (with video)
 
 This is a static site generator for "burning" a modern mixtape. It's platform-independent and won't get scratched up in your car.
 
@@ -101,4 +104,56 @@ COMMANDS:
 GLOBAL OPTIONS:
    --help, -h     show help (default: false)
    --version, -v  print the version (default: false)
+```
+
+```
+~/ldr $ go build cdr
+~/ldr/videomixlaserdisc $ go run ../cmd/cdr preview
+```
+
+### notes to self
+
+[a helpful link about go executables](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-20-04)
+
+#### helpful history commands for folx who don't use golang aka me
+```
+go -v
+go version
+go get github.com/thebaer/cdr/cmd/cdr
+go install github.com/thebaer/cdr/cmd/cdr
+go env
+go help get
+go list
+/$HOME/go/bin/cdr
+/$HOME/go/bin/cdr clean
+/$HOME/go/bin/cdr preview
+/$HOME/go/bin/cdr help
+/$HOME/go/bin/cdr help preview
+go build cdr
+go help build
+go build -pkgdir ../ cdr
+ls /usr/local/go/src/cdr
+go build cdr
+sudo ln -s /$HOME/nun/yo/bisnez/cdr /usr/local/go/src/cdr
+ls /usr/local/go/src/cdr
+go build cdr
+go build cdr
+ls /usr/local/go/src/cdr
+ls /$HOME/go/bin/cdr
+go run -pkgdir ./ cdr
+go run -pkgdir ./
+go mod init ldr
+rm -rf go.mod 
+go mod init ldr
+go mod tidy // makes go.sum
+go build ldr
+go run ldr preview
+go run ldr
+go build cdr
+go build ldr
+ls /usr/local/go/src/cdr
+go build ldr
+rm -rf go.sum
+go run ../cmd/cdr
+go run ../cmd/cdr preview
 ```

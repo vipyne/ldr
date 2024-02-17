@@ -1,8 +1,8 @@
 {{define "player"}}
 	{{with $x := index . 0}}
-		<audio id="player" preload="auto" tabindex="0" controls>
+		<video id="player" preload="auto" tabindex="0" width="320" height="240" controls>
 			<source src="{{$x.Filename}}">
-		</audio>
+		</video>
 	{{end}}
 {{end}}
 {{define "playlist"}}
