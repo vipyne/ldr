@@ -1,4 +1,4 @@
-package cdr
+package laserdisc
 
 type (
 	Mixtape struct {

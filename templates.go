@@ -1,4 +1,4 @@
-package cdr
+package laserdisc
 
 import (
 	_ "embed"

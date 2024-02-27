@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/thebaer/cdr"
+	"laserdisc"
 	"github.com/urfave/cli/v2"
 )
 
@@ -24,7 +24,7 @@ func cleanAction(c *cli.Context) error {
 	filepath.Walk(wd, func(path string, i os.FileInfo, err error) error {
 		if !i.IsDir() && !strings.HasPrefix(i.Name(), ".") {
 			fName := i.Name()
-			trackName := cdr.RenameTrack(fName)
+			trackName := laserdisc.RenameTrack(fName)
 			if trackName == "" {
 				return nil
 			}

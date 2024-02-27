@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/thebaer/cdr"
+	"laserdisc"
 	"github.com/urfave/cli/v2"
 )
 
@@ -24,13 +24,13 @@ var (
 	}
 )
 
-func newMixtape(wd string) (*cdr.Mixtape, error) {
-	m := &cdr.Mixtape{Tracks: []cdr.Track{}}
+func newMixtape(wd string) (*laserdisc.Mixtape, error) {
+	m := &laserdisc.Mixtape{Tracks: []laserdisc.Track{}}
 	c := 1
 
 	filepath.Walk(wd, func(path string, i os.FileInfo, err error) error {
 		if !i.IsDir() && !strings.HasPrefix(i.Name(), ".") && i.Name() != "index.html" && !strings.HasSuffix(i.Name(), ".tmpl") {
-			t, err := cdr.NewTrack(i.Name())
+			t, err := laserdisc.NewTrack(i.Name())
 			if err != nil {
 				log.Printf("Skipping track %s: %v", i.Name(), err)
 				return nil
@@ -63,7 +63,7 @@ func generateAction(c *cli.Context) error {
 		return err
 	}
 
-	err = cdr.Render(m, f)
+	err = laserdisc.Render(m, f)
 	if err != nil {
 		return err
 	}
@@ -88,7 +88,7 @@ func serveAction(c *cli.Context) error {
 			http.ServeFile(w, r, filepath.Join(wd, r.RequestURI))
 			return
 		}
-		err := cdr.Render(m, w)
+		err := laserdisc.Render(m, w)
 		if err != nil {
 			log.Printf("[ERROR] Render failed! %s", err)
 		}
