@@ -1,6 +1,8 @@
 [CD-R 700mb](https://github.com/thebaer/cdr): now with video
 ----
 
+![](/videomixlaserdisc/screen.png)
+
 # Mix Laserdisc
 
 Before Spotify, Apple Music, Amazon Music Unlimited, Amazon Music HD, Google Play Music, Tidal, Deezer, Pandora, Idagio, LiveXLive, Primephonic, SiriusXM Essential, SiriusXM Premier, and YouTube Music, we listened to mixtapes. We compiled tracks on iTunes and burned them onto CD-Rs. We traded them with each other. We freely listened in our car or at home or with our portable CD player. And it was good.
